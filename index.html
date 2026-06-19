@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabor y Capricho</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+
+    <nav id="nav-bar">
+      <button class="nav-btn active" data-section="dashboard">Inicio</button>
+      <button class="nav-btn" data-section="recetas">Recetas</button>
+      <button class="nav-btn" data-section="inventario">Stock</button>
+      <button class="nav-btn" data-section="lotes">Lotes</button>
+      <button class="nav-btn" data-section="ventas">Ventas</button>
+    </nav>
+
+    <main id="contenido">
+    </main>
+
+  </div>
+
+  <script src="app.js"></script>
+
+  <div id="sticky-order"></div>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('Service worker registrado'))
+          .catch(err => console.log('Error al registrar:', err));
+      });
+    }
+  </script>
+</body>
+</body>
+</html>

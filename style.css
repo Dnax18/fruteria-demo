@@ -1,0 +1,223 @@
+*{box-sizing:border-box;margin:0;padding:0}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:#f2f2f7;color:#1a1a1a;min-height:100vh;
+}
+
+#app{
+  max-width:480px;width:100%;margin:0 auto;background:#f2f2f7;
+  min-height:100vh;display:flex;flex-direction:column;
+  padding-bottom:180px;overflow-x:hidden;
+}
+
+/* NAV */
+#nav-bar{
+  display:flex;background:#fff;border-bottom:1px solid #e5e5ea;
+  position:sticky;top:0;z-index:100;
+}
+.nav-btn{
+  flex:1;padding:13px 2px;border:none;background:transparent;
+  font-size:10px;color:#8e8e93;cursor:pointer;
+  border-bottom:2px solid transparent;letter-spacing:0.01em;
+}
+.nav-btn.active{color:#1a1a1a;border-bottom:2px solid #1a1a1a;font-weight:600;}
+
+#contenido{flex:1;padding:16px 12px;}
+
+h2{font-size:22px;font-weight:700;margin-bottom:16px;letter-spacing:-0.3px;}
+
+/* GRIDS */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-bottom:16px;}
+
+/* MÉTRICAS */
+.metricas-top{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
+.metrica-chip{background:#fff;border-radius:14px;padding:14px;}
+.metrica-chip-label{display:block;font-size:11px;color:#8e8e93;margin-bottom:4px;}
+.metrica-chip-valor{display:block;font-size:24px;font-weight:700;letter-spacing:-0.5px;}
+.metrica-chip-valor.verde{color:#34c759;}
+
+/* META */
+.meta-card{background:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.meta-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.meta-titulo{font-size:13px;font-weight:600;}
+.meta-num{font-size:13px;color:#8e8e93;font-weight:500;}
+.meta-num.verde{color:#34c759;}
+.barra-wrap{background:#f2f2f7;border-radius:99px;height:6px;overflow:hidden;margin-bottom:6px;}
+.barra-fill{height:100%;background:#1a1a1a;border-radius:99px;transition:width .4s ease;}
+.meta-sub{font-size:11px;color:#8e8e93;}
+
+.seccion-label{
+  font-size:11px;font-weight:600;color:#8e8e93;
+  text-transform:uppercase;letter-spacing:0.06em;
+  margin-bottom:8px;margin-top:4px;
+}
+
+/* ============================================
+   PROD CARD — sistema base de todas las cards
+   usada en: dashboard, lotes, inventario PT
+   ============================================ */
+.prod-card{
+  background:#fff;border-radius:14px;padding:10px 8px;
+  display:flex;flex-direction:column;gap:3px;
+  transition:opacity .2s;min-width:0;
+}
+.prod-card.prod-sin-stock{opacity:.4;}
+.prod-card-nombre{font-size:11px;font-weight:600;color:#1a1a1a;line-height:1.25;overflow-wrap:break-word;}
+.prod-card-precio{font-size:16px;font-weight:700;letter-spacing:-0.3px;margin-top:2px;}
+.prod-card-stock{font-size:9px;color:#8e8e93;margin-bottom:4px;white-space:nowrap;}
+
+/* BOTONES + y − en cards */
+.card-btns{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:6px;gap:2px;
+}
+.card-qty{font-size:13px;font-weight:700;min-width:14px;text-align:center;}
+
+.btn-add{
+  width:28px;height:28px;border-radius:50%;border:none;
+  background:#1a1a1a;color:#fff;font-size:16px;font-weight:300;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  align-self:flex-end;transition:transform .1s;flex-shrink:0;
+}
+.btn-add:active{transform:scale(.92);}
+.btn-add.btn-add-disabled,.btn-add:disabled{background:#d1d1d6;cursor:not-allowed;}
+
+.btn-card-minus{
+  width:28px;height:28px;border-radius:50%;
+  border:1.5px solid #1a1a1a;background:transparent;
+  color:#1a1a1a;font-size:16px;font-weight:300;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.btn-card-disabled{border-color:#d1d1d6!important;color:#d1d1d6!important;cursor:not-allowed;}
+
+/* LOTES — input inline dentro de prod-card */
+.lote-card-item{gap:5px;}
+.lote-input-inline{display:flex;gap:6px;align-items:center;margin-top:8px;}
+.lote-input-inline input{flex:1;margin:0;padding:8px 10px;font-size:13px;}
+
+/* INVENTARIO PT — controles dentro de prod-card */
+.inv-pt-controls{display:flex;align-items:center;gap:5px;margin-top:8px;}
+.inv-pt-controls input{flex:1;margin:0;padding:6px 8px;font-size:13px;text-align:center;}
+.inv-card-val{font-size:28px;font-weight:700;letter-spacing:-0.5px;margin-top:2px;}
+.inv-card-val.verde{color:#34c759;}
+.inv-card-val.rojo{color:#ff3b30;}
+.inv-card-label{font-size:12px;color:#8e8e93;font-weight:500;}
+
+.btn-ctrl{
+  width:30px;height:30px;border-radius:50%;border:none;
+  font-size:17px;font-weight:500;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.btn-ctrl.plus{background:#1a1a1a;color:#fff;}
+.btn-ctrl.minus{background:#f2f2f7;color:#1a1a1a;}
+
+/* MATERIA PRIMA CARDS — misma base pero con badge */
+.mp-card{
+  background:#fff;border-radius:14px;padding:12px;
+  display:flex;flex-direction:column;gap:8px;
+}
+.mp-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;}
+.mp-card-nombre{font-size:12px;font-weight:600;line-height:1.3;}
+.mp-card-cant{font-size:11px;color:#8e8e93;margin-top:2px;}
+.mp-input-row{display:flex;gap:5px;align-items:center;}
+.mp-input-row input{flex:1;margin:0;padding:7px 6px;font-size:12px;text-align:center;}
+
+.btn-sm-dark{
+  width:32px;height:32px;border-radius:50%;border:none;
+  background:#1a1a1a;color:#fff;font-size:18px;font-weight:300;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.btn-minus{background:#f2f2f7!important;color:#1a1a1a!important;}
+
+/* STICKY */
+#sticky-order{
+  display:none;position:fixed;bottom:0;left:50%;transform:translateX(-50%);
+  width:100%;max-width:480px;background:#fff;border-top:1px solid #e5e5ea;
+  z-index:200;border-radius:20px 20px 0 0;box-shadow:0 -4px 20px rgba(0,0,0,.08);
+}
+.sticky-inner{padding:14px 16px 24px;}
+.sticky-items{margin-bottom:12px;max-height:90px;overflow-y:auto;}
+.sticky-item{display:flex;justify-content:space-between;align-items:center;padding:5px 0;}
+.sticky-item-left{flex:1;}
+.sticky-item-right{display:flex;align-items:center;gap:6px;}
+.sticky-nombre{font-size:13px;color:#1a1a1a;}
+.sticky-precio{font-size:13px;font-weight:600;}
+.descuento-tag{
+  font-size:10px;background:#e8f8ee;color:#34c759;
+  padding:1px 5px;border-radius:4px;margin-left:4px;font-weight:600;
+}
+.sticky-footer{display:flex;align-items:center;gap:12px;}
+.sticky-totales{flex:1;}
+.sticky-total-row{display:flex;justify-content:space-between;font-size:13px;}
+.sticky-total-num{font-size:18px;font-weight:700;}
+.sticky-ctrl{
+  width:26px;height:26px;border-radius:50%;
+  border:1.5px solid #e5e5ea;background:transparent;
+  color:#1a1a1a;font-size:16px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.sticky-qty{font-size:14px;font-weight:700;min-width:16px;text-align:center;}
+.btn-confirmar{
+  background:#1a1a1a;color:#fff;border:none;border-radius:12px;
+  padding:14px 22px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;
+}
+.btn-confirmar:active{transform:scale(.97);}
+
+/* CARD GENERAL */
+.card{background:#fff;border-radius:14px;padding:14px;margin-bottom:12px;}
+.card-titulo{font-size:14px;font-weight:600;margin-bottom:12px;}
+
+/* RECETAS */
+.costo-chip{background:#f2f2f7;border-radius:10px;padding:10px;}
+.costo-chip-label{font-size:11px;color:#8e8e93;margin-bottom:3px;}
+.costo-chip-valor{font-size:16px;font-weight:700;}
+
+/* TABS */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.tab-btn{
+  padding:7px 13px;border:1px solid #e5e5ea;border-radius:99px;
+  background:#fff;font-size:12px;color:#8e8e93;cursor:pointer;
+}
+.tab-btn.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a;font-weight:600;}
+
+/* FILAS */
+.fila{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #f2f2f7;}
+.fila:last-child{border-bottom:none;}
+.fila-label{font-size:13px;color:#1a1a1a;}
+.fila-sub{font-size:11px;color:#8e8e93;margin-top:2px;}
+.fila-valor{font-size:13px;font-weight:600;}
+
+/* BADGES */
+.badge{font-size:10px;padding:3px 8px;border-radius:20px;font-weight:600;white-space:nowrap;}
+.badge.ok {background:#e8f8ee;color:#34c759;}
+.badge.bajo{background:#fff8e1;color:#ff9500;}
+.badge.sin {background:#ffebea;color:#ff3b30;}
+
+/* TAGS */
+.tag-verde{font-size:13px;font-weight:600;color:#34c759;}
+.tag-rojo {font-size:13px;font-weight:600;color:#ff3b30;}
+.verde{color:#34c759;}
+.rojo {color:#ff3b30;}
+
+/* ALERTAS */
+.alerta{padding:8px 10px;border-radius:8px;font-size:12px;margin-top:6px;}
+.alerta.exito{background:#e8f8ee;color:#34c759;}
+.alerta.aviso{background:#fff8e1;color:#ff9500;}
+.alerta.error{background:#ffebea;color:#ff3b30;}
+
+/* INPUTS */
+input,select{
+  width:100%;padding:11px 12px;border:1px solid #e5e5ea;border-radius:10px;
+  font-size:14px;margin-bottom:10px;background:#fff;color:#1a1a1a;-webkit-appearance:none;
+}
+.btn{width:100%;padding:13px;border:none;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;background:#f2f2f7;color:#1a1a1a;}
+.btn.primario{background:#1a1a1a;color:#fff;}
+.hint{font-size:12px;color:#8e8e93;}
+.texto-vacio{font-size:13px;color:#8e8e93;padding:4px 0;}
