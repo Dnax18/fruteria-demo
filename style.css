@@ -7,11 +7,11 @@ html, body {
 
 body{
   font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  background:#f2f2f7;color:#1a1a1a;min-height:100vh;
+  background:#f3f9f0;color:#1a1a1a;min-height:100vh;
 }
 
 #app{
-  max-width:480px;width:100%;margin:0 auto;background:#f2f2f7;
+  max-width:480px;width:100%;margin:0 auto;background:#f3f9f0;
   min-height:100vh;display:flex;flex-direction:column;
   padding-bottom:180px;overflow-x:hidden;
 }
@@ -26,7 +26,7 @@ body{
   font-size:10px;color:#8e8e93;cursor:pointer;
   border-bottom:2px solid transparent;letter-spacing:0.01em;
 }
-.nav-btn.active{color:#1a1a1a;border-bottom:2px solid #1a1a1a;font-weight:600;}
+.nav-btn.active{color:#2e7d32;border-bottom:2px solid #2e7d32;font-weight:600;}
 
 #contenido{flex:1;padding:16px 12px;}
 
@@ -49,8 +49,8 @@ h2{font-size:22px;font-weight:700;margin-bottom:16px;letter-spacing:-0.3px;}
 .meta-titulo{font-size:13px;font-weight:600;}
 .meta-num{font-size:13px;color:#8e8e93;font-weight:500;}
 .meta-num.verde{color:#34c759;}
-.barra-wrap{background:#f2f2f7;border-radius:99px;height:6px;overflow:hidden;margin-bottom:6px;}
-.barra-fill{height:100%;background:#1a1a1a;border-radius:99px;transition:width .4s ease;}
+.barra-wrap{background:#e6f2e3;border-radius:99px;height:6px;overflow:hidden;margin-bottom:6px;}
+.barra-fill{height:100%;background:#2e7d32;border-radius:99px;transition:width .4s ease;}
 .meta-sub{font-size:11px;color:#8e8e93;}
 
 .seccion-label{
@@ -82,7 +82,7 @@ h2{font-size:22px;font-weight:700;margin-bottom:16px;letter-spacing:-0.3px;}
 
 .btn-add{
   width:28px;height:28px;border-radius:50%;border:none;
-  background:#1a1a1a;color:#fff;font-size:16px;font-weight:300;
+  background:#2e7d32;color:#fff;font-size:16px;font-weight:300;
   cursor:pointer;display:flex;align-items:center;justify-content:center;
   align-self:flex-end;transition:transform .1s;flex-shrink:0;
 }
@@ -91,8 +91,8 @@ h2{font-size:22px;font-weight:700;margin-bottom:16px;letter-spacing:-0.3px;}
 
 .btn-card-minus{
   width:28px;height:28px;border-radius:50%;
-  border:1.5px solid #1a1a1a;background:transparent;
-  color:#1a1a1a;font-size:16px;font-weight:300;
+  border:1.5px solid #2e7d32;background:transparent;
+  color:#2e7d32;font-size:16px;font-weight:300;
   cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
 .btn-card-disabled{border-color:#d1d1d6!important;color:#d1d1d6!important;cursor:not-allowed;}
@@ -115,7 +115,7 @@ h2{font-size:22px;font-weight:700;margin-bottom:16px;letter-spacing:-0.3px;}
   font-size:17px;font-weight:500;cursor:pointer;
   display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
-.btn-ctrl.plus{background:#1a1a1a;color:#fff;}
+.btn-ctrl.plus{background:#2e7d32;color:#fff;}
 .btn-ctrl.minus{background:#f2f2f7;color:#1a1a1a;}
 
 /* MATERIA PRIMA CARDS — misma base pero con badge */
@@ -131,7 +131,7 @@ h2{font-size:22px;font-weight:700;margin-bottom:16px;letter-spacing:-0.3px;}
 
 .btn-sm-dark{
   width:32px;height:32px;border-radius:50%;border:none;
-  background:#1a1a1a;color:#fff;font-size:18px;font-weight:300;
+  background:#2e7d32;color:#fff;font-size:18px;font-weight:300;
   cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
 .btn-minus{background:#f2f2f7!important;color:#1a1a1a!important;}
@@ -165,7 +165,7 @@ h2{font-size:22px;font-weight:700;margin-bottom:16px;letter-spacing:-0.3px;}
 }
 .sticky-qty{font-size:14px;font-weight:700;min-width:16px;text-align:center;}
 .btn-confirmar{
-  background:#1a1a1a;color:#fff;border:none;border-radius:12px;
+  background:#2e7d32;color:#fff;border:none;border-radius:12px;
   padding:14px 22px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;
 }
 .btn-confirmar:active{transform:scale(.97);}
@@ -173,19 +173,6 @@ h2{font-size:22px;font-weight:700;margin-bottom:16px;letter-spacing:-0.3px;}
 /* CARD GENERAL */
 .card{background:#fff;border-radius:14px;padding:14px;margin-bottom:12px;}
 .card-titulo{font-size:14px;font-weight:600;margin-bottom:12px;}
-
-/* RECETAS */
-.costo-chip{background:#f2f2f7;border-radius:10px;padding:10px;}
-.costo-chip-label{font-size:11px;color:#8e8e93;margin-bottom:3px;}
-.costo-chip-valor{font-size:16px;font-weight:700;}
-
-/* TABS */
-.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
-.tab-btn{
-  padding:7px 13px;border:1px solid #e5e5ea;border-radius:99px;
-  background:#fff;font-size:12px;color:#8e8e93;cursor:pointer;
-}
-.tab-btn.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a;font-weight:600;}
 
 /* FILAS */
 .fila{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #f2f2f7;}
@@ -218,6 +205,6 @@ input,select{
   font-size:14px;margin-bottom:10px;background:#fff;color:#1a1a1a;-webkit-appearance:none;
 }
 .btn{width:100%;padding:13px;border:none;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;background:#f2f2f7;color:#1a1a1a;}
-.btn.primario{background:#1a1a1a;color:#fff;}
+.btn.primario{background:#2e7d32;color:#fff;}
 .hint{font-size:12px;color:#8e8e93;}
 .texto-vacio{font-size:13px;color:#8e8e93;padding:4px 0;}

@@ -1,12 +1,12 @@
 {
-  "name": "Sabor y Capricho",
-  "short_name": "Sabor y Capricho",
-  "description": "Sistema de gestión para Sabor y Capricho — recetas, inventario, lotes y ventas.",
+  "name": "Frutería Demo",
+  "short_name": "Frutería Demo",
+  "description": "Sistema de gestión para Frutería Demo — stock, recepción de mercancía y ventas.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f2f2f7",
-  "theme_color": "#1a1a1a",
+  "background_color": "#f3f9f0",
+  "theme_color": "#2e7d32",
   "orientation": "portrait",
   "icons": [
     {

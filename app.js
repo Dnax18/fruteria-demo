@@ -1,96 +1,37 @@
 // ============================================================
-// DATOS — SABOR Y CAPRICHO
+// DATOS — FRUTERÍA DEMO
 // ============================================================
 
 const PRODUCTOS = {
-  mango:   { nombre: 'Mango Coco',       tipo: 'vasito', precio: 55,  precio2x: 100, costo: 29.10 },
-  limon:   { nombre: 'Lemon Fresh',      tipo: 'vasito', precio: 55,  precio2x: 100, costo: 24.73 },
-  oreo:    { nombre: 'Postre Oreo',      tipo: 'vasito', precio: 55,  precio2x: 100, costo: 29.81 },
-  rol_ind: { nombre: 'Rol individual',   tipo: 'rol',    precio: 22,  costo: 12.86  },
-  rol_4:   { nombre: 'Charola 4 roles',  tipo: 'rol',    precio: 80,  costo: 51.46, unidades: 4  },
-  rol_6:   { nombre: 'Charola 6 roles',  tipo: 'rol',    precio: 120, costo: 77.18, unidades: 6  },
+  mango:     { nombre: 'Mango',     categoria: 'frutas',     precio: 25,  costo: 16  },
+  sandia:    { nombre: 'Sandía',    categoria: 'frutas',     precio: 18,  costo: 11  },
+  melon:     { nombre: 'Melón',     categoria: 'frutas',     precio: 22,  costo: 14  },
+  papaya:    { nombre: 'Papaya',    categoria: 'frutas',     precio: 20,  costo: 13  },
+  tomate:    { nombre: 'Tomate',    categoria: 'verduras',   precio: 15,  costo: 9   },
+  cebolla:   { nombre: 'Cebolla',   categoria: 'verduras',   precio: 12,  costo: 7   },
+  chile:     { nombre: 'Chile',     categoria: 'verduras',   precio: 10,  costo: 6   },
+  papa:      { nombre: 'Papa',      categoria: 'verduras',   precio: 14,  costo: 9   },
+  arrachera: { nombre: 'Arrachera', categoria: 'carniceria', precio: 180, costo: 120 },
+  milanesa:  { nombre: 'Milanesa',  categoria: 'carniceria', precio: 120, costo: 80  },
+  molida:    { nombre: 'Molida',    categoria: 'carniceria', precio: 95,  costo: 63  },
+  costilla:  { nombre: 'Costilla',  categoria: 'carniceria', precio: 110, costo: 73  },
 };
 
-const RECETAS = {
-  roles: {
-    nombre: 'Roles glaseados', rinde: '6 charolas / 24 roles',
-    costo_lote: 321.62, unidades_por_lote: 24, tipo: 'rol',
-    descuento_mp: { charolas:5, capacillos:22, harina:638, leche:400, levadura:10, azucar_est:107, huevos:4, azucar_masc:250, vainilla:8, miel:4, crema_batir:110, sal:5, mantequilla:235, canela:15, queso_crema:150, azucar_glass:150 },
-    ingredientes: [
-      {nombre:'Harina',cantidad:'638g'},{nombre:'Leche',cantidad:'400ml'},{nombre:'Levadura',cantidad:'10g'},
-      {nombre:'Azúcar estándar',cantidad:'107g'},{nombre:'Huevos',cantidad:'4 pz'},{nombre:'Azúcar mascabado',cantidad:'250g'},
-      {nombre:'Vainilla',cantidad:'8ml'},{nombre:'Miel',cantidad:'4g'},{nombre:'Crema para batir',cantidad:'110ml'},
-      {nombre:'Sal',cantidad:'5g'},{nombre:'Mantequilla',cantidad:'235g'},{nombre:'Canela',cantidad:'15g'},
-      {nombre:'Queso crema',cantidad:'150g'},{nombre:'Azúcar glass',cantidad:'150g'},{nombre:'Charolas',cantidad:'5 pz'},{nombre:'Capacillos',cantidad:'22 pz'}
-    ]
-  },
-  mango: {
-    nombre: 'Mango Coco', rinde: '5 vasitos',
-    costo_lote: 145.48, unidades_por_lote: 5, tipo: 'vasito',
-    descuento_mp: { vasos:5, tapas:5, servilletas:10, cucharas:5, galleta_maria:170, mantequilla:80, queso_crema:250, crema_batir:150, azucar_glass:17, leche_cond:50, vainilla:2, azucar_est:25, mango:260, coco_rallado:20, limon:8 },
-    ingredientes: [
-      {nombre:'Galleta María',cantidad:'170g'},{nombre:'Mantequilla',cantidad:'80g'},{nombre:'Queso crema',cantidad:'250g'},
-      {nombre:'Crema para batir',cantidad:'150ml'},{nombre:'Azúcar glass',cantidad:'17g'},{nombre:'Leche condensada',cantidad:'50g'},
-      {nombre:'Vainilla',cantidad:'2ml'},{nombre:'Azúcar estándar',cantidad:'25g'},{nombre:'Mango',cantidad:'260g'},
-      {nombre:'Coco rallado',cantidad:'20g'},{nombre:'Limón mermelada',cantidad:'8ml'}
-    ]
-  },
-  limon: {
-    nombre: 'Lemon Fresh', rinde: '5 vasitos',
-    costo_lote: 123.64, unidades_por_lote: 5, tipo: 'vasito',
-    descuento_mp: { vasos:5, tapas:5, servilletas:10, cucharas:5, galleta_maria:170, mantequilla:80, queso_crema:250, crema_batir:170, azucar_glass:17, leche_cond:53, vainilla:1, azucar_est:33, limon:142 },
-    ingredientes: [
-      {nombre:'Galleta María',cantidad:'170g'},{nombre:'Mantequilla',cantidad:'80g'},{nombre:'Queso crema',cantidad:'250g'},
-      {nombre:'Crema para batir',cantidad:'170ml'},{nombre:'Azúcar glass',cantidad:'17g'},{nombre:'Leche condensada',cantidad:'53g'},
-      {nombre:'Vainilla',cantidad:'1ml'},{nombre:'Azúcar estándar',cantidad:'33g'},{nombre:'Limón relleno',cantidad:'75ml'},{nombre:'Limón mermelada',cantidad:'67ml'}
-    ]
-  },
-  oreo: {
-    nombre: 'Postre Oreo', rinde: '5 vasitos',
-    costo_lote: 149.06, unidades_por_lote: 5, tipo: 'vasito',
-    descuento_mp: { vasos:5, tapas:5, servilletas:10, cucharas:5, galleta_oreo:230, mantequilla:30, queso_crema:250, crema_batir:200, azucar_glass:33, cocoa:10, leche_cond:83, vainilla:4, jarabe_choc:40 },
-    ingredientes: [
-      {nombre:'Galleta Oreo',cantidad:'230g'},{nombre:'Mantequilla',cantidad:'30g'},{nombre:'Queso crema',cantidad:'250g'},
-      {nombre:'Crema para batir',cantidad:'200ml'},{nombre:'Azúcar glass',cantidad:'33g'},{nombre:"Cocoa Hershey's",cantidad:'10g'},
-      {nombre:'Leche condensada',cantidad:'83g'},{nombre:'Vainilla',cantidad:'4ml'},{nombre:'Jarabe de chocolate',cantidad:'40g'}
-    ]
-  }
-};
+const CATEGORIAS = [
+  { key: 'frutas',     nombre: 'Frutas' },
+  { key: 'verduras',   nombre: 'Verduras' },
+  { key: 'carniceria', nombre: 'Carnicería' },
+];
 
-const MATERIA_PRIMA = {
-  vasos:        {nombre:'Vasos',            cantidad:50,   unidad:'pz',  minimo:10 },
-  tapas:        {nombre:'Tapas',            cantidad:100,  unidad:'pz',  minimo:10 },
-  cucharas:     {nombre:'Cucharas',         cantidad:100,  unidad:'pz',  minimo:10 },
-  servilletas:  {nombre:'Servilletas',      cantidad:450,  unidad:'pz',  minimo:50 },
-  galleta_maria:{nombre:'Galleta María',    cantidad:3060, unidad:'g',   minimo:170},
-  galleta_oreo: {nombre:'Galleta Oreo',     cantidad:1260, unidad:'g',   minimo:230},
-  mantequilla:  {nombre:'Mantequilla',      cantidad:1000, unidad:'g',   minimo:100},
-  queso_crema:  {nombre:'Queso crema',      cantidad:1900, unidad:'g',   minimo:250},
-  crema_batir:  {nombre:'Crema para batir', cantidad:0,    unidad:'ml',  minimo:150},
-  leche_cond:   {nombre:'Leche condensada', cantidad:3000, unidad:'g',   minimo:50 },
-  vainilla:     {nombre:'Vainilla',         cantidad:150,  unidad:'ml',  minimo:5  },
-  azucar_glass: {nombre:'Azúcar glass',     cantidad:400,  unidad:'g',   minimo:30 },
-  cocoa:        {nombre:"Cocoa Hershey's",  cantidad:200,  unidad:'g',   minimo:10 },
-  jarabe_choc:  {nombre:'Jarabe chocolate', cantidad:3400, unidad:'g',   minimo:40 },
-  coco_rallado: {nombre:'Coco rallado',     cantidad:100,  unidad:'g',   minimo:20 },
-  azucar_est:   {nombre:'Azúcar estándar',  cantidad:4000, unidad:'g',   minimo:30 },
-  mango:        {nombre:'Mango',            cantidad:2000, unidad:'g',   minimo:260},
-  limon:        {nombre:'Limón',            cantidad:1000, unidad:'ml',  minimo:75 },
-  harina:       {nombre:'Harina',           cantidad:2500, unidad:'g',   minimo:638},
-  leche:        {nombre:'Leche',            cantidad:1000, unidad:'ml',  minimo:400},
-  levadura:     {nombre:'Levadura',         cantidad:450,  unidad:'g',   minimo:10 },
-  azucar_masc:  {nombre:'Azúcar mascabado', cantidad:400,  unidad:'g',   minimo:250},
-  sal:          {nombre:'Sal',              cantidad:1000, unidad:'g',   minimo:5  },
-  miel:         {nombre:'Miel',             cantidad:2000, unidad:'g',   minimo:5  },
-  huevos:       {nombre:'Huevos',           cantidad:30,   unidad:'pz',  minimo:4  },
-  canela:       {nombre:'Canela',           cantidad:203,  unidad:'g',   minimo:15 },
-  charolas:     {nombre:'Charolas',         cantidad:25,   unidad:'pz',  minimo:5  },
-  capacillos:   {nombre:'Capacillos',       cantidad:240,  unidad:'pz',  minimo:22 },
-};
+const MIN_STOCK = 5; // kg
 
 let estado = {
-  inventario: { mango:0, limon:0, oreo:0, roles:12 },
-  ventas: [], lotes: [], movimientos: [],
+  inventario: {
+    mango: 50, sandia: 40, melon: 35, papaya: 30,
+    tomate: 60, cebolla: 50, chile: 35, papa: 55,
+    arrachera: 15, milanesa: 20, molida: 25, costilla: 18
+  },
+  ventas: [], recepciones: [], movimientos: [],
   totalVentas: 0, totalGanancia: 0
 };
 
@@ -100,13 +41,11 @@ let carrito = {};
 // PERSISTENCIA — localStorage
 // ============================================================
 
-const STORAGE_KEY = 'sabor_y_capricho_estado';
-const STORAGE_KEY_MP = 'sabor_y_capricho_materia_prima';
+const STORAGE_KEY = 'fruteria_demo_estado';
 
 function guardarDatos() {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(estado));
-    localStorage.setItem(STORAGE_KEY_MP, JSON.stringify(MATERIA_PRIMA));
   } catch (e) {
     console.error('Error al guardar:', e);
   }
@@ -115,20 +54,16 @@ function guardarDatos() {
 function cargarDatos() {
   try {
     const estadoGuardado = localStorage.getItem(STORAGE_KEY);
-    const mpGuardada = localStorage.getItem(STORAGE_KEY_MP);
-
     if (estadoGuardado) {
       estado = JSON.parse(estadoGuardado);
-    }
-    if (mpGuardada) {
-      const mpParseada = JSON.parse(mpGuardada);
-      for (const key in mpParseada) {
-        if (MATERIA_PRIMA[key]) MATERIA_PRIMA[key].cantidad = mpParseada[key].cantidad;
-      }
     }
   } catch (e) {
     console.error('Error al cargar:', e);
   }
+}
+
+function formatKg(n) {
+  return `${Number(n.toFixed(1))} kg`;
 }
 
 // ============================================================
@@ -152,9 +87,8 @@ function renderizar(seccion) {
   sticky.style.display = 'none';
   switch (seccion) {
     case 'dashboard':  c.innerHTML = htmlDashboard();  actualizarSticky(); break;
-    case 'recetas':    c.innerHTML = htmlRecetas();    break;
     case 'inventario': c.innerHTML = htmlInventario(); break;
-    case 'lotes':      c.innerHTML = htmlLotes();      break;
+    case 'recepcion':  c.innerHTML = htmlRecepcion();  break;
     case 'ventas':     c.innerHTML = htmlVentas();     break;
   }
 }
@@ -183,30 +117,24 @@ function actualizarSticky() {
       <div class="sticky-items">
         ${items.map(([key, qty]) => {
           const p = PRODUCTOS[key];
-          let precio = p.precio * qty;
-          let tag = '';
-          if (p.tipo === 'vasito' && qty >= 2) {
-            const pares = Math.floor(qty/2), sueltos = qty%2;
-            precio = pares * p.precio2x + sueltos * p.precio;
-            if (pares > 0) tag = `<span class="descuento-tag">2×$${p.precio2x}</span>`;
-          }
+          const precio = p.precio * qty;
           return `<div class="sticky-item">
             <div class="sticky-item-left">
-              <span class="sticky-nombre">${p.nombre}${tag}</span>
+              <span class="sticky-nombre">${p.nombre}</span>
             </div>
             <div class="sticky-item-right">
               <button class="sticky-ctrl" onclick="quitarDelCarrito('${key}')">−</button>
-              <span class="sticky-qty">${qty}</span>
+              <span class="sticky-qty">${formatKg(qty)}</span>
               <button class="sticky-ctrl" onclick="agregarAlCarrito('${key}')">+</button>
-              <span class="sticky-precio">$${precio}</span>
+              <span class="sticky-precio">$${precio.toFixed(2)}</span>
             </div>
           </div>`;
         }).join('')}
       </div>
       <div class="sticky-footer">
         <div class="sticky-totales">
-          <div class="sticky-total-row"><span>Total</span><span class="sticky-total-num">$${total}</span></div>
-          <div class="sticky-total-row" style="font-size:11px;color:#8e8e93"><span>Ganancia</span><span>$${ganancia.toFixed(0)}</span></div>
+          <div class="sticky-total-row"><span>Total</span><span class="sticky-total-num">$${total.toFixed(2)}</span></div>
+          <div class="sticky-total-row" style="font-size:11px;color:#8e8e93"><span>Ganancia</span><span>$${ganancia.toFixed(2)}</span></div>
         </div>
         <button class="btn-confirmar" onclick="confirmarVenta()">Confirmar</button>
       </div>
@@ -217,12 +145,9 @@ function calcularTotal() {
   let t = 0;
   for (const [key, qty] of Object.entries(carrito)) {
     if (qty <= 0) continue;
-    const p = PRODUCTOS[key];
-    if (p.tipo === 'vasito' && qty >= 2) {
-      t += Math.floor(qty/2)*p.precio2x + (qty%2)*p.precio;
-    } else { t += p.precio * qty; }
+    t += PRODUCTOS[key].precio * qty;
   }
-  return t;
+  return Math.round(t * 100) / 100;
 }
 
 function calcularGanancia() {
@@ -230,22 +155,17 @@ function calcularGanancia() {
   for (const [key, qty] of Object.entries(carrito)) {
     if (qty > 0) g += (PRODUCTOS[key].precio - PRODUCTOS[key].costo) * qty;
   }
-  return g;
+  return Math.round(g * 100) / 100;
 }
 
 function stockDe(key) {
-  if (['mango','limon','oreo'].includes(key)) return estado.inventario[key] || 0;
-  const r = estado.inventario.roles || 0;
-  if (key === 'rol_ind') return r;
-  if (key === 'rol_4') return Math.floor(r/4);
-  if (key === 'rol_6') return Math.floor(r/6);
-  return 0;
+  return estado.inventario[key] || 0;
 }
 
 function agregarAlCarrito(key) {
   const enCarrito = carrito[key] || 0;
-  if (enCarrito >= stockDe(key)) return;
-  carrito[key] = enCarrito + 1;
+  if (enCarrito + 0.5 > stockDe(key) + 0.0001) return;
+  carrito[key] = Math.round((enCarrito + 0.5) * 10) / 10;
   actualizarCardUI(key);
   actualizarSticky();
 }
@@ -253,7 +173,7 @@ function agregarAlCarrito(key) {
 function quitarDelCarrito(key) {
   const enCarrito = carrito[key] || 0;
   if (enCarrito <= 0) return;
-  carrito[key] = enCarrito - 1;
+  carrito[key] = Math.round((enCarrito - 0.5) * 10) / 10;
   actualizarCardUI(key);
   actualizarSticky();
 }
@@ -266,16 +186,16 @@ function actualizarCardUI(key) {
   const qtyEl    = document.getElementById(`qty-${key}`);
   if (!stockEl) return;
   const enCarrito = carrito[key] || 0;
-  const restante  = stockDe(key) - enCarrito;
+  const restante  = Math.round((stockDe(key) - enCarrito) * 10) / 10;
   const sinStock  = restante <= 0;
 
-  stockEl.textContent = sinStock ? 'Sin stock' : `${restante} disp.`;
+  stockEl.textContent = sinStock ? 'Sin stock' : `${formatKg(restante)} disp.`;
   stockEl.style.color = sinStock ? '#ff3b30' : '#8e8e93';
   if (btnEl)    btnEl.disabled    = sinStock;
   if (btnMinus) btnMinus.disabled = enCarrito === 0;
   if (btnMinus) btnMinus.className = `btn-card-minus${enCarrito===0?' btn-card-disabled':''}`;
   if (cardEl)   cardEl.classList.toggle('prod-sin-stock', sinStock);
-  if (qtyEl)    qtyEl.textContent = enCarrito > 0 ? enCarrito : '';
+  if (qtyEl)    qtyEl.textContent = enCarrito > 0 ? formatKg(enCarrito) : '';
 }
 
 function confirmarVenta() {
@@ -284,21 +204,18 @@ function confirmarVenta() {
   const total = calcularTotal(), ganancia = calcularGanancia();
 
   for (const [key, qty] of items) {
-    if (key === 'mango' || key === 'limon' || key === 'oreo')
-      estado.inventario[key] = Math.max(0, (estado.inventario[key]||0) - qty);
-    else if (key === 'rol_ind') estado.inventario.roles = Math.max(0, estado.inventario.roles - qty);
-    else if (key === 'rol_4')   estado.inventario.roles = Math.max(0, estado.inventario.roles - qty*4);
-    else if (key === 'rol_6')   estado.inventario.roles = Math.max(0, estado.inventario.roles - qty*6);
+    const p = PRODUCTOS[key];
+    estado.inventario[key] = Math.round(Math.max(0, (estado.inventario[key]||0) - qty) * 10) / 10;
 
     estado.ventas.unshift({
-      nombre: PRODUCTOS[key].nombre, cantidad: qty,
-      ingreso: PRODUCTOS[key].precio * qty,
+      nombre: p.nombre, cantidad: qty,
+      ingreso: Math.round(p.precio * qty * 100) / 100,
       hora: new Date().toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'})
     });
 
     estado.movimientos.unshift({
       tipo: 'venta', signo: '−',
-      texto: `${PRODUCTOS[key].nombre} ×${qty}`,
+      texto: `${p.nombre} · ${formatKg(qty)}`,
       hora: new Date().toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'})
     });
   }
@@ -319,13 +236,17 @@ function htmlDashboard() {
   const pct  = Math.min(100, Math.round((estado.totalGanancia/meta)*100));
   const faltan = Math.max(0, meta - estado.totalGanancia);
 
-  const vasitos = ['mango','limon','oreo'].map(k => cardProducto(k)).join('');
-  const roles   = ['rol_ind','rol_4','rol_6'].map(k => cardProducto(k)).join('');
+  const secciones = CATEGORIAS.map(cat => {
+    const keys = Object.entries(PRODUCTOS).filter(([,p]) => p.categoria === cat.key).map(([k]) => k);
+    return `
+      <div class="seccion-label">${cat.nombre}</div>
+      <div class="grid-2" style="margin-bottom:16px">${keys.map(k => cardProducto(k)).join('')}</div>`;
+  }).join('');
 
   const ultimas = estado.ventas.slice(0,4).map(v => `
     <div class="fila">
-      <div><div class="fila-label">${v.nombre} ×${v.cantidad}</div><div class="fila-sub">${v.hora}</div></div>
-      <span class="tag-verde">+$${v.ingreso}</span>
+      <div><div class="fila-label">${v.nombre} · ${formatKg(v.cantidad)}</div><div class="fila-sub">${v.hora}</div></div>
+      <span class="tag-verde">+$${v.ingreso.toFixed(0)}</span>
     </div>`).join('') || '<p class="texto-vacio">Sin ventas aún.</p>';
 
   return `
@@ -342,18 +263,14 @@ function htmlDashboard() {
 
     <div class="meta-card">
       <div class="meta-header">
-        <span class="meta-titulo">Meta 18 jun</span>
+        <span class="meta-titulo">Meta del día</span>
         <span class="meta-num ${faltan===0?'verde':''}">${faltan===0?'Alcanzada':'Faltan $'+faltan.toFixed(0)}</span>
       </div>
       <div class="barra-wrap"><div class="barra-fill" style="width:${pct}%"></div></div>
       <div class="meta-sub">$${estado.totalGanancia.toFixed(0)} de $${meta} ganancia neta</div>
     </div>
 
-    <div class="seccion-label">Postres</div>
-    <div class="grid-3">${vasitos}</div>
-
-    <div class="seccion-label">Roles de canela</div>
-    <div class="grid-3">${roles}</div>
+    ${secciones}
 
     <div class="card">
       <div class="card-titulo">Últimas ventas</div>
@@ -364,20 +281,20 @@ function htmlDashboard() {
 function cardProducto(key) {
   const p = PRODUCTOS[key];
   const enCarrito = carrito[key] || 0;
-  const restante  = stockDe(key) - enCarrito;
+  const restante  = Math.round((stockDe(key) - enCarrito) * 10) / 10;
   const sinStock  = restante <= 0;
   return `
     <div class="prod-card ${sinStock?'prod-sin-stock':''}" id="card-${key}">
       <div class="prod-card-nombre">${p.nombre}</div>
-      <div class="prod-card-precio">$${p.precio}</div>
+      <div class="prod-card-precio">$${p.precio}<span style="font-size:9px;font-weight:400;color:#8e8e93">/kg</span></div>
       <div class="prod-card-stock" id="stock-${key}" style="color:${sinStock?'#ff3b30':'#8e8e93'}">
-        ${sinStock?'Sin stock':`${restante} disp.`}
+        ${sinStock?'Sin stock':`${formatKg(restante)} disp.`}
       </div>
       <div class="card-btns">
         <button class="btn-card-minus${enCarrito===0?' btn-card-disabled':''}"
           id="btn-minus-${key}" onclick="quitarDelCarrito('${key}')"
           ${enCarrito===0?'disabled':''}>−</button>
-        <span class="card-qty" id="qty-${key}">${enCarrito>0?enCarrito:''}</span>
+        <span class="card-qty" id="qty-${key}">${enCarrito>0?formatKg(enCarrito):''}</span>
         <button class="btn-add${sinStock?' btn-add-disabled':''}"
           id="btn-${key}" onclick="agregarAlCarrito('${key}')"
           ${sinStock?'disabled':''}>+</button>
@@ -386,78 +303,33 @@ function cardProducto(key) {
 }
 
 // ============================================================
-// RECETAS
-// ============================================================
-
-function htmlRecetas() {
-  const tabs = Object.entries(RECETAS).map(([k,r],i) =>
-    `<button class="tab-btn ${i===0?'active':''}" onclick="verReceta('${k}')" id="tab-${k}">${r.nombre}</button>`
-  ).join('');
-  return `
-    <h2>Recetas</h2>
-    <div class="tabs">${tabs}</div>
-    <div id="receta-detalle">${bloqueReceta(RECETAS[Object.keys(RECETAS)[0]])}</div>`;
-}
-
-function bloqueReceta(r) {
-  return `
-    <div class="card">
-      <div class="card-titulo">${r.nombre}</div>
-      <div class="hint" style="margin-bottom:12px">${r.rinde}</div>
-      <div class="grid-2" style="margin-bottom:14px">
-        <div class="costo-chip"><div class="costo-chip-label">Costo lote</div><div class="costo-chip-valor">$${r.costo_lote.toFixed(2)}</div></div>
-        <div class="costo-chip"><div class="costo-chip-label">Por unidad</div><div class="costo-chip-valor">$${(r.costo_lote/r.unidades_por_lote).toFixed(2)}</div></div>
-      </div>
-      <div class="card-titulo" style="margin-bottom:8px">Ingredientes</div>
-      ${r.ingredientes.map(i=>`<div class="fila"><span class="fila-label">${i.nombre}</span><span class="fila-valor">${i.cantidad}</span></div>`).join('')}
-    </div>`;
-}
-
-function verReceta(key) {
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('tab-'+key).classList.add('active');
-  document.getElementById('receta-detalle').innerHTML = bloqueReceta(RECETAS[key]);
-}
-
-// ============================================================
 // INVENTARIO
 // ============================================================
 
-// ============================================================
-// INVENTARIO V2 — reemplaza htmlInventario y agregarMP
-// ============================================================
-
 function htmlInventario() {
-  const ptCards = [
-    {label:'Mango Coco',  key:'mango', val:estado.inventario.mango},
-    {label:'Lemon Fresh', key:'limon', val:estado.inventario.limon},
-    {label:'Postre Oreo', key:'oreo',  val:estado.inventario.oreo},
-    {label:'Roles',       key:'roles', val:estado.inventario.roles},
-  ].map(item => `
-    <div class="prod-card" id="card-pt-${item.key}">
-      <div class="prod-card-nombre">${item.label}</div>
-      <div class="prod-card-precio ${item.val===0?'rojo':''}" id="pt-val-${item.key}">${item.val}</div>
-      <div class="prod-card-stock">disponibles</div>
-    </div>`).join('');
-
-  const mpCards = Object.entries(MATERIA_PRIMA).map(([key, mp]) => {
-    const s = mp.cantidad<=0?'sin':mp.cantidad<mp.minimo?'bajo':'ok';
-    const l = s==='sin'?'Sin stock':s==='bajo'?'Bajo':'OK';
-    return `
-      <div class="mp-card">
-        <div class="mp-card-top">
-          <div>
-            <div class="mp-card-nombre">${mp.nombre}</div>
-            <div class="mp-card-cant" id="mp-cant-${key}">${mp.cantidad} ${mp.unidad}</div>
+  const secciones = CATEGORIAS.map(cat => {
+    const productos = Object.entries(PRODUCTOS).filter(([,p]) => p.categoria === cat.key);
+    const cards = productos.map(([key, p]) => {
+      const stock = estado.inventario[key] || 0;
+      const s = stock<=0?'sin':stock<MIN_STOCK?'bajo':'ok';
+      const l = s==='sin'?'Sin stock':s==='bajo'?'Bajo':'OK';
+      return `
+        <div class="mp-card">
+          <div class="mp-card-top">
+            <div>
+              <div class="mp-card-nombre">${p.nombre}</div>
+              <div class="mp-card-cant" id="stock-cant-${key}">${formatKg(stock)}</div>
+            </div>
+            <span class="badge ${s}" id="stock-badge-${key}">${l}</span>
           </div>
-          <span class="badge ${s}" id="mp-badge-${key}">${l}</span>
-        </div>
-        <div class="mp-input-row">
-          <button class="btn-sm-dark btn-minus" onclick="ajustarMP('${key}',-1)">−</button>
-          <input type="number" id="mp-qty-${key}" placeholder="cant" min="0" step="0.1"/>
-          <button class="btn-sm-dark" onclick="ajustarMP('${key}',1)">+</button>
-        </div>
-      </div>`;
+          <div class="mp-input-row">
+            <button class="btn-sm-dark btn-minus" onclick="ajustarStock('${key}',-1)">−</button>
+            <input type="number" id="stock-qty-${key}" placeholder="kg" min="0" step="0.5"/>
+            <button class="btn-sm-dark" onclick="ajustarStock('${key}',1)">+</button>
+          </div>
+        </div>`;
+    }).join('');
+    return `<div class="seccion-label">${cat.nombre}</div><div class="grid-2" style="margin-bottom:16px">${cards}</div>`;
   }).join('');
 
   const movimientos = estado.movimientos.slice(0, 15).map(m => `
@@ -470,30 +342,27 @@ function htmlInventario() {
     </div>`).join('') || '<p class="texto-vacio">Sin movimientos registrados.</p>';
 
   return `
-    <h2>Inventario</h2>
-    <div class="seccion-label">Producto terminado</div>
-    <div class="grid-2" style="margin-bottom:16px">${ptCards}</div>
-    <div class="seccion-label">Materia prima</div>
-    <div class="grid-2" style="margin-bottom:16px">${mpCards}</div>
+    <h2>Stock</h2>
+    ${secciones}
     <div class="card">
       <div class="card-titulo">Historial de movimientos</div>
       ${movimientos}
     </div>`;
 }
 
-function ajustarMP(key, direccion) {
-  const input  = document.getElementById(`mp-qty-${key}`);
-  const qty    = parseFloat(input.value) || 1;
-  const actual = MATERIA_PRIMA[key].cantidad;
+function ajustarStock(key, direccion) {
+  const input  = document.getElementById(`stock-qty-${key}`);
+  const qty    = parseFloat(input.value) || 0.5;
+  const actual = estado.inventario[key] || 0;
   const nuevo  = Math.max(0, actual + direccion * qty);
-  MATERIA_PRIMA[key].cantidad = parseFloat(nuevo.toFixed(1));
+  estado.inventario[key] = Math.round(nuevo * 10) / 10;
   input.value = '';
 
-  const cantEl  = document.getElementById(`mp-cant-${key}`);
-  const badgeEl = document.getElementById(`mp-badge-${key}`);
-  if (cantEl) cantEl.textContent = `${MATERIA_PRIMA[key].cantidad} ${MATERIA_PRIMA[key].unidad}`;
+  const cantEl  = document.getElementById(`stock-cant-${key}`);
+  const badgeEl = document.getElementById(`stock-badge-${key}`);
+  if (cantEl) cantEl.textContent = formatKg(estado.inventario[key]);
   if (badgeEl) {
-    const s = nuevo<=0?'sin':nuevo<MATERIA_PRIMA[key].minimo?'bajo':'ok';
+    const s = estado.inventario[key]<=0?'sin':estado.inventario[key]<MIN_STOCK?'bajo':'ok';
     const l = s==='sin'?'Sin stock':s==='bajo'?'Bajo':'OK';
     badgeEl.className = `badge ${s}`;
     badgeEl.textContent = l;
@@ -501,77 +370,74 @@ function ajustarMP(key, direccion) {
 
   estado.movimientos.unshift({
     tipo: 'ajuste', signo: direccion > 0 ? '+' : '−',
-    texto: `${MATERIA_PRIMA[key].nombre}: ${direccion>0?'+':'−'}${qty} ${MATERIA_PRIMA[key].unidad}`,
+    texto: `${PRODUCTOS[key].nombre}: ${direccion>0?'+':'−'}${qty} kg`,
     hora: new Date().toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'})
   });
   guardarDatos();
 }
 
 // ============================================================
-// LOTES
+// RECEPCIÓN DE MERCANCÍA
 // ============================================================
 
-function htmlLotes() {
-  const loteCards = Object.entries(RECETAS).map(([key, r]) => `
-    <div class="prod-card lote-card-item" id="lote-card-${key}">
-      <div class="prod-card-nombre">${r.nombre}</div>
-      <div class="prod-card-precio">$${r.costo_lote.toFixed(0)}<span style="font-size:10px;font-weight:400;color:#8e8e93"> /lote</span></div>
-      <div class="prod-card-stock">${r.rinde}</div>
-      <div class="lote-input-inline">
-        <input type="number" id="lote-qty-${key}" placeholder="# lotes" min="1"/>
-        <button class="btn-add" onclick="registrarLote('${key}')">+</button>
-      </div>
-      <div id="lote-msg-${key}"></div>
-    </div>`).join('');
+function htmlRecepcion() {
+  const cards = CATEGORIAS.map(cat => {
+    const productos = Object.entries(PRODUCTOS).filter(([,p]) => p.categoria === cat.key);
+    const itemCards = productos.map(([key, p]) => `
+      <div class="prod-card lote-card-item" id="recepcion-card-${key}">
+        <div class="prod-card-nombre">${p.nombre}</div>
+        <div class="prod-card-stock">${formatKg(estado.inventario[key]||0)} en stock</div>
+        <div class="lote-input-inline">
+          <input type="number" id="recepcion-qty-${key}" placeholder="kg recibidos" min="0.5" step="0.5"/>
+          <button class="btn-add" onclick="registrarRecepcion('${key}')">+</button>
+        </div>
+        <div id="recepcion-msg-${key}"></div>
+      </div>`).join('');
+    return `<div class="seccion-label">${cat.nombre}</div><div class="grid-2" style="margin-bottom:16px">${itemCards}</div>`;
+  }).join('');
 
-  const historial = estado.lotes.slice(0, 10).map(l => `
+  const historial = estado.recepciones.slice(0, 10).map(r => `
     <div class="fila">
       <div>
-        <div class="fila-label">${l.nombre}</div>
-        <div class="fila-sub">${l.unidades} · ${l.hora}</div>
+        <div class="fila-label">${r.nombre}</div>
+        <div class="fila-sub">${r.hora}</div>
       </div>
-      <span class="tag-rojo">-$${l.costo_lote.toFixed(0)}</span>
-    </div>`).join('') || '<p class="texto-vacio">Sin lotes registrados.</p>';
+      <span class="tag-verde">+${formatKg(r.cantidad)}</span>
+    </div>`).join('') || '<p class="texto-vacio">Sin recepciones registradas.</p>';
 
   return `
-    <h2>Lotes</h2>
-    <div class="grid-2" style="margin-bottom:16px">${loteCards}</div>
+    <h2>Recepción de mercancía</h2>
+    ${cards}
     <div class="card">
       <div class="card-titulo">Historial</div>
       ${historial}
     </div>`;
 }
 
-function registrarLote(key) {
-  const qty = parseInt(document.getElementById(`lote-qty-${key}`).value);
-  const r   = RECETAS[key];
-  if (isNaN(qty) || qty < 1) { mostrarMsg(`lote-msg-${key}`, 'Cantidad inválida.', 'aviso'); return; }
+function registrarRecepcion(key) {
+  const input = document.getElementById(`recepcion-qty-${key}`);
+  const qty = parseFloat(input.value);
+  const p = PRODUCTOS[key];
+  if (!qty || qty <= 0) { mostrarMsg(`recepcion-msg-${key}`, 'Cantidad inválida.', 'aviso'); return; }
 
-  for (const [mpk, cant] of Object.entries(r.descuento_mp)) {
-    if (MATERIA_PRIMA[mpk]) MATERIA_PRIMA[mpk].cantidad = Math.max(0, MATERIA_PRIMA[mpk].cantidad - cant * qty);
-  }
+  estado.inventario[key] = Math.round(((estado.inventario[key] || 0) + qty) * 10) / 10;
 
-  const unidades = r.unidades_por_lote * qty;
-  if (r.tipo === 'rol') estado.inventario.roles = (estado.inventario.roles || 0) + unidades;
-  else estado.inventario[key] = (estado.inventario[key] || 0) + unidades;
-
-  estado.lotes.unshift({
-    nombre: r.nombre,
-    unidades: `${unidades} ${r.tipo === 'rol' ? 'roles' : 'vasitos'}`,
-    costo_lote: r.costo_lote * qty,
+  estado.recepciones.unshift({
+    nombre: p.nombre,
+    cantidad: qty,
     hora: new Date().toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })
   });
 
   estado.movimientos.unshift({
-    tipo: 'lote', signo: '+',
-    texto: `Lote: ${r.nombre} +${unidades} ${r.tipo === 'rol' ? 'roles' : 'vasitos'}`,
+    tipo: 'recepcion', signo: '+',
+    texto: `Recepción: ${p.nombre} +${formatKg(qty)}`,
     hora: new Date().toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })
   });
 
-  document.getElementById(`lote-qty-${key}`).value = '';
-  mostrarMsg(`lote-msg-${key}`, `+${unidades} al inventario`, 'exito');
+  input.value = '';
+  mostrarMsg(`recepcion-msg-${key}`, `+${formatKg(qty)} al inventario`, 'exito');
   guardarDatos();
-  setTimeout(() => renderizar('lotes'), 1600);
+  setTimeout(() => renderizar('recepcion'), 1600);
 }
 
 // ============================================================
@@ -584,10 +450,10 @@ function htmlVentas() {
   const resumen = ventaCards.length ? ventaCards.map(v => `
     <div class="fila">
       <div>
-        <div class="fila-label">${v.nombre} ×${v.cantidad}</div>
+        <div class="fila-label">${v.nombre} · ${formatKg(v.cantidad)}</div>
         <div class="fila-sub">${v.hora}</div>
       </div>
-      <span class="tag-verde">+$${v.ingreso}</span>
+      <span class="tag-verde">+$${v.ingreso.toFixed(0)}</span>
     </div>`).join('') : '<p class="texto-vacio">Sin ventas registradas.</p>';
 
   return `
@@ -610,9 +476,9 @@ function htmlVentas() {
 }
 
 function confirmarReinicio() {
-  if (confirm('¿Seguro que quieres borrar todas las ventas, lotes y movimientos? El inventario de materia prima y producto terminado se mantiene.')) {
+  if (confirm('¿Seguro que quieres borrar todas las ventas, recepciones y movimientos? El inventario actual se mantiene.')) {
     estado.ventas = [];
-    estado.lotes = [];
+    estado.recepciones = [];
     estado.movimientos = [];
     estado.totalVentas = 0;
     estado.totalGanancia = 0;

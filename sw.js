@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sabor-y-capricho-v1';
+const CACHE_NAME = 'fruteria-demo-v1';
 
 const ARCHIVOS_CACHE = [
   './index.html',
